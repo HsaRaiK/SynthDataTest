@@ -1,0 +1,33 @@
+{ 
+    "profile_id": "inflammation_v1",
+    "profile_name": "General Inflammation Risk Profile",
+    "model_version": "1.0.0",
+    "description": "Baseline risk assessment profile using IL-6 and neutrophil markers.",
+    
+    "biomarkers": 
+    { "IL-6": 
+        { 
+            "unit": "pg/mL",
+            "valid_range": [0.0, 500.0],
+            "reference_range": [0.0, 50.0], 
+            "weight": 0.6 
+        },
+        
+    "neutrophil_marker": 
+        {
+        "unit": "RFU",
+        "valid_range": [0.0, 1000.0],
+        "reference_range": [0.0, 200.0],
+        "weight": 0.4 
+        }
+    }, 
+        
+        "risk_scale": 
+        [ 
+            { "min_score": 0.0, "max_score": 0.2, "level": "1-2", "label": "Very low abnormality" },
+            { "min_score": 0.2, "max_score": 0.4, "level": "3-4", "label": "Low abnormality" },
+            { "min_score": 0.4, "max_score": 0.6, "level": "5-6", "label": "Moderate abnormality" },
+            { "min_score": 0.6, "max_score": 0.8, "level": "7-8", "label": "Elevated abnormality" },
+            { "min_score": 0.8, "max_score": 1.0, "level": "9-10", "label": "Very high abnormality" }
+        ]
+}
